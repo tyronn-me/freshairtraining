@@ -40,7 +40,7 @@
 			<iframe src="<?php echo $instagramPost["video_url"]; ?>" class="embed-responsive-item" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 		</div>
 		<?php } else { ?>
-			
+
 		<?php } ?>
 	</div><!-- row -->
 	</div><!-- container -->
@@ -54,34 +54,7 @@
 	<div class="row" id="serviceDesc">
 		<?php echo $ServiceCards["description"]; ?>
 	</div><!-- row -->
-	<div class="row">
-	  <div class="col-sm-4">
-	    <div class="card bg-white rounded">
-		    <div class="cardBG"></div>
-	      <div class="card-body">
-	        <h5 class="display-4"><?php echo $ServiceCards["zumba_title"]; ?></h5>
-	        <p class="card-text"><?php echo $ServiceCards["zumba_text"]; ?></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-4">
-	    <div class="card shadow-md bg-white rounded" id="centerCard">
-		    <div class="cardBG"></div>
-	      <div class="card-body">
-	        <h5 class="display-4"><?php echo $ServiceCards["barre_title"]; ?></h5>
-	        <p class="card-text"><?php echo $ServiceCards["barre_text"]; ?></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-4">
-	    <div class="card bg-white rounded">
-		    <div class="cardBG"></div>
-	      <div class="card-body">
-	        <h5 class="display-4"><?php echo $ServiceCards["hiit_title"]; ?></h5>
-	        <p class="card-text"><?php echo $ServiceCards["hiit_text"]; ?></p>
-	      </div>
-	    </div>
-	  </div>
+	<div class="row justify-content-md-center" id="classRow">
 	</div><!-- row -->
 </div><!-- container -->
 </div>
@@ -94,9 +67,9 @@
 		<div class="col-md-12">
 			<div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner">
-				<?php 
+				<?php
 					$args = array( 'post_type' => 'movies', 'posts_per_page' => 10 );
-					$the_query = new WP_Query( $args ); 
+					$the_query = new WP_Query( $args );
 					$slideNum = 1;
 				?>
 				<?php if ( $the_query->have_posts() ) : ?>
@@ -105,7 +78,7 @@
 			      <?php the_content(); ?>
 			      <h3><?php the_title(); ?> <i class="fas fa-comment-dots"></i></h3>
 			    </div>
-				<?php 
+				<?php
 					$slideNum++;
 					endwhile;
 				wp_reset_postdata(); ?>

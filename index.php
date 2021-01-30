@@ -1,4 +1,4 @@
-<?php 
+<?php
 // This is the defualt template
 include('header.php');
 
@@ -6,6 +6,5 @@ include('header.php');
 		get_template_part( 'parts/content', 'frontpage' );
 	}
 
- 
-include('footer.php'); 
+include('footer.php');
 ?>

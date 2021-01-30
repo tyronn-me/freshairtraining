@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', 'fresh_scripts' );
 /* Custom admin page */
 
 function testimonials_posttype() {
- 
+
     register_post_type( 'movies',
         array(
             'labels' => array(
@@ -41,7 +41,7 @@ function testimonials_posttype() {
             'has_archive' => true,
             'rewrite' => array('slug' => 'testimonials'),
             'show_in_rest' => true,
- 
+
         )
     );
 }
@@ -76,11 +76,23 @@ add_action("wp_ajax_get_fat_info", "get_fat_info");
 add_action("wp_ajax_nopriv_get_fat_info", "get_fat_info");
 
 function get_fat_info() {
-	global $wpdb;
 
+	$curl = curl_init("https://api.bookwhen.com/v2/events?filter[calendar]=y3ioqnsgmxvg");
 
+	curl_setopt($curl, CURLOPT_USERPWD, "dnt40pnrmugmr1uhhqhh8p6queh6");
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+	$rest = curl_exec($curl);
+
+	if(curl_errno($curl))
+	{
+	    echo 'Curl error : ' . curl_error($curl);
+	}
+
+	curl_close($curl);
+
+	echo $rest;
 	die();
-
 }
 
 

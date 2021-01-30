@@ -224,19 +224,23 @@ p {
 	border: none;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 20px;
-	background: none!important;
+	margin-bottom: 40px;
+	background: #ffffff!important;
 }
 
 
 #serviceContainer .card p, #serviceContainer .card h5 {
-	padding: 5%;
+	padding: 3%;
 	position: relative;
 	z-index: 2;
 }
 
+#serviceContainer .card p {
+	font-size: 1em;
+}
+
 #serviceContainer .card a {
-	margin: 0 5% 5% 5%;
+	margin: 20px 3% 3% 3%;
 	position: relative;
 	z-index: 2;
 }
